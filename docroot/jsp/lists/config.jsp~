@@ -1,0 +1,28 @@
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+<liferay-theme:defineObjects />
+<portlet:defineObjects />
+
+<%
+	String scope=renderRequest.getPreferences().getValue("scope", "0");
+%>
+
+<form method='post' action='<liferay-portlet:actionURL portletConfiguration="true" />'>
+
+	<p>
+		<liferay-ui:message key='scope' /> : 
+
+		<select name='<portlet:namespace />scope'>
+			<option value='0' <%=scope.equals("0")?"selected":"" %> > <liferay-ui:message key='portlet-id' /> (<liferay-ui:message key='default' />)</option>
+			<option value='1' <%=scope.equals("1")?"selected":"" %> > <liferay-ui:message key='page' /> </option>
+			<option value='2' <%=scope.equals("2")?"selected":"" %> > <liferay-ui:message key='community' /> </option>
+		</select>
+	</p>
+	<p>
+		<input type='submit' value="<liferay-ui:message key='send' />" />
+	</p>
+</form>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<resource-action-mapping>
+	<portlet-resource>
+		<portlet-name>list</portlet-name>
+
+		<supports> 
+			<action-key>EDIT</action-key>
+		</supports>
+
+		<community-defaults>
+		</community-defaults>
+
+		<guest-defaults>
+		</guest-defaults>
+
+		<guest-unsupported>
+		</guest-unsupported>
+
+	</portlet-resource>
+</resource-action-mapping>
+
+

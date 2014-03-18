@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.lostsys.lists.service.TaskItemLocalService" class="com.lostsys.lists.service.impl.TaskItemLocalServiceImpl" />
+	<bean id="com.lostsys.lists.service.persistence.TaskItemPersistence" class="com.lostsys.lists.service.persistence.TaskItemPersistenceImpl" parent="basePersistence" />
+	<bean id="com.lostsys.lists.service.TaskItemCommentLocalService" class="com.lostsys.lists.service.impl.TaskItemCommentLocalServiceImpl" />
+	<bean id="com.lostsys.lists.service.persistence.TaskItemCommentPersistence" class="com.lostsys.lists.service.persistence.TaskItemCommentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.lostsys.lists.service.TaskListLocalService" class="com.lostsys.lists.service.impl.TaskListLocalServiceImpl" />
+	<bean id="com.lostsys.lists.service.persistence.TaskListPersistence" class="com.lostsys.lists.service.persistence.TaskListPersistenceImpl" parent="basePersistence" />
+</beans>

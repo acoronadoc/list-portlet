@@ -1,0 +1,1 @@
+create index IX_641DADAB on Lostsys_TaskList (portlet);

@@ -1,0 +1,60 @@
+.lists_comment_img {
+  float: left; }
+
+.lists_comment_txt {
+  float: left;
+  margin-left: 5px; }
+
+.lists_comment_header {
+  font-weight: bold; }
+
+.lists_comment_content {
+  padding: 5px; }
+
+.list_form_field {
+  float: left;
+  margin-right: 4px; }
+
+#listform .control-group {
+  margin-bottom: auto; }
+
+#listform input[type="submit"], #listform input[type="button"] {
+  margin-bottom: auto;
+  margin-top: auto; }
+
+.status_normal {
+  color: #008000;
+  font-weight: normal; }
+
+.status_waiting {
+  color: #FF8000;
+  font-weight: normal; }
+
+.status_cancelled {
+  color: #C0C0C0;
+  font-weight: normal; }
+
+.status_finished {
+  color: #000000;
+  text-decoration: line-through; }
+
+.weight_highest {
+  color: #C00000;
+  font-weight: bold; }
+
+.weight_high {
+  color: #FF8040;
+  font-weight: bold; }
+
+.weight_normal {
+  color: #004000;
+  font-weight: bold; }
+
+.weight_low {
+  color: #000080;
+  font-weight: bold; }
+
+.weight_lowest {
+  color: #800080;
+  font-weight: bold; }
+

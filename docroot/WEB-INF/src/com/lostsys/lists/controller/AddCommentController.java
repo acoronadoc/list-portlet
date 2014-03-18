@@ -1,0 +1,57 @@
+package com.lostsys.lists.controller;
+
+import com.lostsys.lists.util.ModelAndView;
+
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+
+import java.io.IOException;
+import javax.portlet.PortletException;
+
+import java.util.Map;
+import java.util.HashMap;
+
+import com.lostsys.lists.service.TaskItemCommentLocalServiceUtil;
+import com.lostsys.lists.model.TaskItemComment;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
+
+import com.liferay.portal.theme.ThemeDisplay;
+import com.liferay.portal.kernel.util.WebKeys;
+
+public class AddCommentController {
+
+	public void handleActionRequest(ActionRequest request, ActionResponse response) throws IOException, PortletException {
+		ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+
+		response.setRenderParameter("action","view");
+
+		if ( request.getParameter("order")!=null ) 
+			response.setRenderParameter("order", request.getParameter("order") );
+
+		if ( request.getParameter("list")!=null )
+			response.setRenderParameter("list", request.getParameter("list") );
+
+		if ( request.getParameter("itemid")!=null )
+			response.setRenderParameter("itemid", request.getParameter("itemid") );
+
+		try {
+			TaskItemComment l;
+			l=TaskItemCommentLocalServiceUtil.createTaskItemComment( CounterLocalServiceUtil.increment(TaskItemComment.class.getName()) );
+
+			l.setItem( Integer.parseInt( request.getParameter("itemid") )  );
+			l.setUserid( themeDisplay.getUser().getUserId() );
+			l.setDescription( request.getParameter("description") );
+	
+			TaskItemCommentLocalServiceUtil.addTaskItemComment( l );
+		} catch (Exception ex) { ex.printStackTrace(); }
+		}
+
+	public ModelAndView handleRenderRequest(RenderRequest request, RenderResponse response) throws IOException, PortletException {
+		Map<String, Object> model = new HashMap<String, Object>();
+
+		return null;
+		}
+}

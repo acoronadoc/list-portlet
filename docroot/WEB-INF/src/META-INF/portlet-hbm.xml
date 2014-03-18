@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.lostsys.lists.model.TaskItem" />
+	<import class="com.lostsys.lists.model.TaskItemComment" />
+	<import class="com.lostsys.lists.model.TaskList" />
+	<class name="com.lostsys.lists.model.impl.TaskItemImpl" table="Lostsys_TaskItem">
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="list" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="label" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="weight" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.lostsys.lists.model.impl.TaskItemCommentImpl" table="Lostsys_TaskItemComment">
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="item" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userid" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.lostsys.lists.model.impl.TaskListImpl" table="Lostsys_TaskList">
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="portlet" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="weight" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ratings" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="comments" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+</hibernate-mapping>

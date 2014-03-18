@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+
+<service-builder package-path="com.lostsys.lists">
+    <namespace>Lostsys</namespace>
+
+    <entity name="TaskList" local-service="true" remote-service="false" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" type="long" primary="true" />
+
+		<!-- Other fields -->
+		<column name="portlet" type="String" />
+		<column name="description" type="String"/>
+		<column name="weight" type="int" />
+		<column name="ratings" type="int" />
+		<column name="comments" type="int" />
+
+    </entity>
+
+    <entity name="TaskItem" local-service="true" remote-service="false" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" type="long" primary="true" />
+
+		<!-- Other fields -->
+		<column name="list" type="long" />
+		<column name="label" type="String" />
+		<column name="weight" type="int" />
+		<column name="status" type="int" />
+		<column name="description" type="String" />
+    </entity>
+
+    <entity name="TaskItemComment" local-service="true" remote-service="false" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" type="long" primary="true" />
+
+		<!-- Other fields -->
+		<column name="item" type="long" />
+		<column name="userid" type="long" />
+		<column name="description" type="String" />
+    </entity>
+
+</service-builder>
